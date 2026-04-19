@@ -37,24 +37,21 @@ const Hero = () => {
     return (
         <section ref={container} className="hero-page w-full flex flex-col items-center justify-center p-4 py-8 pt-40">
             <div id="main-page-layout">
-                <h1 className="mt-2 p-4 overflow-hidden">
-                    <span ref={hiText} className='inline-block tracking-widest'>Hi, I'm</span>
-                    <span ref={nameRef} className="text-[#915EFF] p-4 name-highlights inline-block tracking-wider">
+                <h1 className="mt-2 p-4 flex flex-wrap justify-center md:justify-start overflow-hidden">
+                    <span ref={hiText} className='inline-block pl-4 tracking-widest'>Hi, I'm</span>
+                    <span ref={nameRef} className="text-[#915EFF] px-4 name-highlights inline-block tracking-wider">
                         <span className='inline-block'>M</span>
                         <span className='inline-block'>i</span>
                         <span className='inline-block'>r</span>
                         <span className='inline-block'>a</span>
                         <span className='inline-block'>j</span>
-                        <span className='sm:inline-block hidden  px-2'></span>
-                        <span className='sm:inline-block hidden '>G</span>
-                        <span className='sm:inline-block hidden '>a</span>
-                        <span className='sm:inline-block hidden '>u</span>
-                        <span className='sm:inline-block hidden '>t</span>
-                        <span className='sm:inline-block hidden '>a</span>
-                        <span className='sm:inline-block hidden '>m</span>
-                        <span>
-                            <img width={60} height={60} className="rounded-full inline-block sm:hidden shadow-md shadow-purple-500/20" src="/images/web.png" alt="web" />
-                        </span>
+                        <span className='md:inline-block hidden  px-2'></span>
+                        <span className='md:inline-block hidden '>G</span>
+                        <span className='md:inline-block hidden '>a</span>
+                        <span className='md:inline-block hidden '>u</span>
+                        <span className='md:inline-block hidden '>t</span>
+                        <span className='md:inline-block hidden '>a</span>
+                        <span className='md:inline-block hidden '>m</span>
                     </span>
                 </h1>
                 <p className="text-[#dfd9ff] overflow-hidden mt-6">

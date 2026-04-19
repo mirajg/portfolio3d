@@ -68,7 +68,7 @@ const PhoneNav = ({ setIsOpen }) => {
     return (
         <>
             <div ref={hideRemove} className="hide-remove w-full h-screen bg-black absolute top-0 -left-[100vw] z-100 "></div>
-            <div ref={container} className="container hidden">
+            <div ref={container} className="container hidden nav-container">
                 <Canvas id='canvas' style={{
                     width: "100%",
                     height: "100vh",

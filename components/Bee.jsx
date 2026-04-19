@@ -12,13 +12,13 @@ const Bee = () => {
     camera.position.z = 2;
   }, [camera]);
 
-  // Load model
-  const { scene, animations } = useGLTF("/models3d/bee.glb");
+  // Load models
+  const { scene, animations } = useGLTF("/models3d/bee_new.glb");
   const { actions } = useAnimations(animations, scene);
 
   let textures = useTexture({
     normalMap: "/images/fur.jpg",
-    matcap: "/images/skin.png"
+    matcap: "/images/skin1.png"
   })
  
   useLayoutEffect(() => {
@@ -61,5 +61,3 @@ const Bee = () => {
 };
 
 export default Bee;
-
-useGLTF.preload("/models3d/bee.glb");
