@@ -35,8 +35,8 @@ const Hero = () => {
     }, { scope: container });
 
     return (
-        <section ref={container} className="hero-page w-full flex flex-col items-center justify-center p-4 py-8 pt-40">
-            <div id="main-page-layout">
+        <section ref={container} className="hero-page w-full flex flex-col items-center justify-center p-4 py-8">
+            <div id="main-page-layout ">
                 <h1 className="mt-2 p-4 flex flex-wrap justify-center md:justify-start overflow-hidden">
                     <span ref={hiText} className='inline-block pl-4 tracking-widest'>Hi, I'm</span>
                     <span ref={nameRef} className="text-[#915EFF] px-4 name-highlights inline-block tracking-wider">

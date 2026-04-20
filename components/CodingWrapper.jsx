@@ -1,9 +1,19 @@
 
 "use client"
 
-import React, { useState, Suspense } from 'react'
+import React, { useState, Suspense, useMemo } from 'react'
 import { Canvas } from '@react-three/fiber'
+import * as THREE from 'three' // Import THREE for color space constants
 import ActualCoding from './ActualCoding.jsx'
+import Loading from './Loading.jsx'
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useRef, useEffect } from 'react';
+
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 const BG_OPTIONS = [
     { id: 1, path: "/images/background1.png" },
@@ -16,55 +26,89 @@ const BG_OPTIONS = [
 
 const CodingWrapper = () => {
     const [imgSelect, setImgSelect] = useState(BG_OPTIONS[0].path);
+    const container = useRef(null);
+    const insideContainer = useRef(null);
+    const settingsContainer = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container.current,
+                start: 'top 75%',
+                end: '+=500',
+            }
+        });
+
+        tl.from(insideContainer.current, {
+            y: "100%",
+            opacity: 0,
+            duration: 1.5,
+            ease: "power2.inOut"
+        })
+        tl.from(settingsContainer.current, {
+            y: "100%",
+            opacity: 0,
+            duration: 1.5,
+            ease: "power2.inOut"
+        })
+    }, { scope: container });
 
     return (
-        <>
-            <div className="relative w-full h-screen">
+        <div ref={container} className="overflow-hidden">
+            <div ref={insideContainer} className="relative w-full h-screen"
+                style={{
+                    backgroundImage: `url(${imgSelect})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundColor: "#1d1836"
+                }}>
                 <Canvas
+                    shadows
+                    // Enable sRGB color management on the renderer
+                    gl={{
+                        antialias: true,
+                        outputColorSpace: THREE.SRGBColorSpace,
+                        alpha: true // Important: allows the div background to show through
+                    }}
                     style={{
                         position: "absolute",
                         top: 0,
                         left: 0,
                         width: "100%",
                         height: "100%",
-                        backgroundImage: `url(${imgSelect})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                        backgroundColor: "#1d1836",
-                        zIndex: 1,
-                        pointerEvents: "none", // Allow clicks to pass through the
-                        transition: "background-image 1s ease-out" // Smooth transition for background changes
+                        zIndex: 2,
+                        pointerEvents: "none", // Re-enabled so you can interact with the model
                     }}
                 >
-                    {/* 2. Suspense handles the loading state of the 3D model */}
-                    <Suspense fallback={null}>
+                    <Suspense fallback={<Loading />}>
                         <ActualCoding bgImg={imgSelect} />
                     </Suspense>
                 </Canvas>
 
-                <div className="absolute z-[9] bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
-                    <p className="text-white font-medium drop-shadow-md">Select BG</p>
-
-                    <div className="flex gap-3 p-3 rounded-lg shadow-lg">
-                        {BG_OPTIONS.map((skin) => (
-                            <button
-                                key={skin.id}
-                                onClick={() => setImgSelect(skin.path)}
-                                className={`w-8 h-8 rounded-full border-2 transition-transform active:scale-90 shadow-lg ${imgSelect === skin.path ? 'border-yellow-400 scale-110' : 'border-white/50'
-                                    }`}
-                                style={{
-                                    backgroundImage: `url(${skin.path})`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center'
-                                }}
-                                aria-label={`Select skin ${skin.id}`}
-                            />
-                        ))}
+                {/* UI Controls */}
+                <div className="overflow-hidden">
+                    <div ref={settingsContainer} className="absolute z-[10] bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+                        <p className="text-white font-medium drop-shadow-md">Select BG</p>
+                        <div className="flex gap-3 p-3 bg-black/20 backdrop-blur-sm rounded-lg shadow-lg">
+                            {BG_OPTIONS.map((skin) => (
+                                <button
+                                    key={skin.id}
+                                    onClick={() => setImgSelect(skin.path)}
+                                    className={`w-8 h-8 rounded-full border-2 transition-all active:scale-90 ${imgSelect === skin.path ? 'border-yellow-400 scale-110' : 'border-white/50'
+                                        }`}
+                                    style={{
+                                        backgroundImage: `url(${skin.path})`,
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center'
+                                    }}
+                                    aria-label={`Switch to background ${skin.id}`} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

@@ -13,7 +13,7 @@ const Header = () => {
                 <>
                     <PhoneNav setIsOpen={setIsOpen} />
                 </>}
-            <header className="fixed z-[10] px-4 top-0 left-0 h-20 flex items-center justify-center w-full bg-[#050816]">
+            <header className="px-4 relative h-20 flex items-center justify-center w-full bg-[#050816]">
                 <nav className="flex max-w-7xl w-full mx-auto items-center justify-between">
 
                     <span className="flex items-center gap-2  cursor-pointer group">

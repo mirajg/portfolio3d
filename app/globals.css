@@ -32,19 +32,36 @@ body {
   color: var(--foreground);
   font-family: 'Sekuya', sans-serif;
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
 }
 
 html {
-  overflow-y: auto;
-  height: -webkit-fill-available;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+  /* Allow the html to stay still */
+  /* overflow: hidden; */
 }
 
 body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  width: 100%;
+  /* Use min-height instead of height so it can grow */
+  min-height: 100dvh;
+  /* This is the key: only the body handles the scrolling */
+  overflow-y: auto;
   overflow-x: hidden;
+
+  /* Touch & Smoothness */
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+
+  /* Remove this if it's killing your mouse wheel */
+  overscroll-behavior-y: auto;
 }
+
+main {
+  min-height: 400vh;
+  position: relative;
+}
+
 
 .hero-page {
   background-image: url("/images/mainbg.png");
@@ -141,7 +158,9 @@ body {
   font-size: 1.25rem;
 }
 
-.skills-container {
+.skills-container,
+.coding-story-container,
+.project-container {
   font-family: 'Sekuya', sans-serif;
   /* Minimum 14px, Preferred 2vw, Maximum 32px */
   font-size: clamp(0.875rem, 1.5vw, 1.5rem);
@@ -152,7 +171,6 @@ body {
   /* max-width: 800px; */
   /* Prevents lines from getting too long on desktop */
   margin: 0 auto;
-  /* Centers the text block */
 }
 
 .intro-subtext {
@@ -160,13 +178,6 @@ body {
   letter-spacing: 0.1em;
   opacity: 0.8;
   font-size: clamp(0.75rem, 1vw, 1rem);
-}
-
-main {
-  min-height: 100vh;
-  /* Fallback */
-  min-height: 100dvh;
-  height: 400vh;
 }
 
 .main-title {

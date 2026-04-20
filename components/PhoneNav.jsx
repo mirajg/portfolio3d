@@ -1,13 +1,14 @@
 
 "use client"
 
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, Suspense } from 'react'
 import { useEffect } from 'react'
 import Bee from './Bee'
 import { Canvas } from '@react-three/fiber'
 import { Environment } from '@react-three/drei'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import Loading from './Loading'
 
 const PhoneNav = ({ setIsOpen }) => {
     const realTimeDate = useRef(null);
@@ -69,7 +70,7 @@ const PhoneNav = ({ setIsOpen }) => {
         <>
             <div ref={hideRemove} className="hide-remove w-full h-screen bg-black absolute top-0 -left-[100vw] z-100 "></div>
             <div ref={container} className="container hidden nav-container">
-                <Canvas id='canvas' style={{
+                <Canvas gl={{ powerPreference: "high-performance", antialias: false }} id='canvas' style={{
                     width: "100%",
                     height: "100vh",
                     position: "fixed",
@@ -79,8 +80,11 @@ const PhoneNav = ({ setIsOpen }) => {
                     transition: "all 0.4s linear",
                     pointerEvents: "none",
                 }} className='sm:block hidden'>
-                    <Bee />
+                    <Suspense fallback={<Loading />}>
+                        <Bee />
+                    </Suspense>
                 </Canvas>
+
                 <header className='fixed left-0 z-50 flex flex-col items-center justify-center bg-[#050816] h-screen w-full overflow-hidden'>
 
                     <button
@@ -107,7 +111,7 @@ const PhoneNav = ({ setIsOpen }) => {
                         </nav>
 
                         {/* Footer info inside nav */}
-                        <div className="absolute footer-txt bottom-10 px-10 max-w-7xl w-full flex justify-between items-end text-gray-500 tracking-widest">
+                        <div className="absolute footer-txt bottom-10 px-10 max-w-6xl w-full flex justify-between items-end text-gray-500 tracking-widest">
                             <p ref={realTimeDate} id="real-time-date"></p>
                             <div className="flex gap-4">
                                 <span className="hover:text-white cursor-pointer inline-block transition-colors">YT</span>

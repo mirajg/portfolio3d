@@ -6,7 +6,9 @@ import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useRef, useEffect } from 'react';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 const Skills = () => {
     const container = useRef(null);
@@ -15,8 +17,6 @@ const Skills = () => {
 
 
     useGSAP(() => {
-        ScrollTrigger.refresh();
-
         // Create a timeline linked to the scroll
         const tl = gsap.timeline({
             scrollTrigger: {
