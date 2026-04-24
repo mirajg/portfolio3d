@@ -5,7 +5,7 @@ import { useGLTF, useAnimations, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
 const Globe = () => {
-  const { scene, animations } = useGLTF("/models3d/globe.glb");
+  const { scene, animations } = useGLTF("/models3d/globe_new.glb");
   const { nodes } = useGraph(scene);
   const { actions } = useAnimations(animations, scene);
   const { camera, gl } = useThree();
@@ -65,6 +65,6 @@ const Globe = () => {
   )
 }
 
-useGLTF.preload("/models3d/globe.glb"); // Matches the file used in the component
+useGLTF.preload("/models3d/globe_new.glb"); // Matches the file used in the component
 
 export default Globe;

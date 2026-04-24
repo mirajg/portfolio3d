@@ -19,6 +19,7 @@ const Contact = () => {
     const [loading, setLoading] = useState(false);
     const sectionContainer = useRef(null);
     const formContainer = useRef(null);
+    const singleLine = useRef(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -64,6 +65,15 @@ const Contact = () => {
             duration: 1.5,
             ease: "power2.inOut",
         })
+            .from(singleLine.current, {
+                y: 100,
+                opacity: 0,
+                rotateX: -30,
+                transformOrigin: "top center",
+                duration: 1.8,
+                ease: "power4.out",
+                delay: 0.2            // Gives the user a split second to focus
+            });
 
     }, { scope: sectionContainer });
 
@@ -134,6 +144,7 @@ const Contact = () => {
                                 {loading ? 'Sending...' : 'Send Message'}
                             </button>
                         </form>
+                        <hr className="singleLine" ref={singleLine} />
                     </div>
                     <div className='md:block hidden'>
                         <Canvas gl={{ powerPreference: "high-performance", antialias: false }} id='canvas' style={{

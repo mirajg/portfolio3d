@@ -40,9 +40,8 @@ const CodingWrapper = () => {
         });
 
         tl.from(insideContainer.current, {
-            y: "100%",
             opacity: 0,
-            duration: 1.5,
+            duration: 1,
             ease: "power2.inOut"
         })
         tl.from(settingsContainer.current, {
@@ -54,17 +53,32 @@ const CodingWrapper = () => {
     }, { scope: container });
 
     return (
-        <div ref={container} className="overflow-hidden">
+        <div ref={container} className="overflow-hidden relative">
+            <div className="absolute top-0 left-0 w-full z-[20] transform rotate-180">
+                <svg
+                    viewBox="0 0 1440 320"
+                    preserveAspectRatio="none"
+                    className="relative block w-full h-[120px]"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        fill="#050816" // CHANGE THIS: Match the background color of the section ABOVE this one
+                        fillOpacity="1"
+                        d="M0,160L40,176C80,192,160,224,240,208C320,192,400,128,480,122.7C560,117,640,171,720,181.3C800,192,880,160,960,176C1040,192,1120,256,1200,261.3C1280,267,1360,213,1400,186.7L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+                    </path>
+                </svg>
+            </div>
+
+
             <div ref={insideContainer} className="relative w-full h-screen"
                 style={{
                     backgroundImage: `url(${imgSelect})`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    backgroundColor: "#1d1836"
+                    backgroundColor: "#1d1836",
+                    transition: "background-image 1s ease-in-out"
                 }}>
                 <Canvas
-                    shadows
                     // Enable sRGB color management on the renderer
                     gl={{
                         antialias: true,

@@ -78,6 +78,7 @@ const Skills = () => {
                                 I'm a quick learner and collaborate closely with clients to create
                                 efficient, scalable, and user-friendly solutions.
                             </p>
+                            <hr className="singleLine" />
                         </div>
 
                     </div>

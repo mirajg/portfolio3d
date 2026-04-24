@@ -15,6 +15,7 @@ const PhoneNav = ({ setIsOpen }) => {
     const hideRemove = useRef(null);
     const container = useRef(null);
     const tl = useRef(null);
+    const [isOpen, setIsOpenState] = useState(false);
 
     const closeMenu = () => {
         if (tl.current) {
@@ -22,6 +23,14 @@ const PhoneNav = ({ setIsOpen }) => {
             tl.current.reverse();
         }
     };
+
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
 
     useGSAP(() => {
         const spans = container.current?.querySelectorAll("li span");
@@ -68,7 +77,7 @@ const PhoneNav = ({ setIsOpen }) => {
 
     return (
         <>
-            <div ref={hideRemove} className="hide-remove w-full h-screen bg-black absolute top-0 -left-[100vw] z-100 "></div>
+            <div ref={hideRemove} className="hide-remove w-full h-screen bg-black absolute top-0 -left-[100vw] z-99 "></div>
             <div ref={container} className="container hidden nav-container">
                 <Canvas gl={{ powerPreference: "high-performance", antialias: false }} id='canvas' style={{
                     width: "100%",
