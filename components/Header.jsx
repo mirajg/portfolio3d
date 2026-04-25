@@ -51,8 +51,6 @@ const Header = () => {
                 <>
                     <PhoneNav setIsOpen={setIsOpen} />
                 </>}
-
-            {/* i need to add glass morphism effect in navbar */}
             <header className={`px-4 fixed left-0 top-0 z-10 h-20 flex items-center justify-center w-full backdrop-blur-2xl transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'} ${isBouncing ? 'bounce-animation' : ''}`}>
                 <nav className="flex max-w-7xl w-full mx-auto items-center justify-between">
 

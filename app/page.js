@@ -23,7 +23,7 @@ const page = () => {
             <Hero />
             <CodingWrapper />
             <Skills />
-            {/* <CodingStory /> */}
+            <CodingStory />
             <Projects />
             <Contact />
           </main>

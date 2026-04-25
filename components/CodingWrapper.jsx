@@ -102,7 +102,7 @@ const CodingWrapper = () => {
 
                 {/* UI Controls */}
                 <div className="overflow-hidden">
-                    <div ref={settingsContainer} className="absolute z-[10] bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+                    <div ref={settingsContainer} className="absolute z-[2] bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
                         <p className="text-white font-medium drop-shadow-md">Select BG</p>
                         <div className="flex gap-3 p-3 bg-black/20 backdrop-blur-sm rounded-lg shadow-lg">
                             {BG_OPTIONS.map((skin) => (

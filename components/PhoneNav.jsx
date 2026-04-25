@@ -99,8 +99,7 @@ const PhoneNav = ({ setIsOpen }) => {
                     <button
                         className="fixed top-6 closeMenu right-[2rem] z-[60] hover:scale-110 transition-transform"
                         onClick={() => closeMenu()}
-                        aria-label="Close menu"
-                    >
+                        aria-label="Close menu">
                         <img src="/images/closeSword.svg" width={40} height={40} alt="closeSword" aria-hidden="true" />
                     </button>
 
@@ -123,8 +122,12 @@ const PhoneNav = ({ setIsOpen }) => {
                         <div className="absolute footer-txt bottom-10 px-10 max-w-6xl w-full flex justify-between items-end text-gray-500 tracking-widest">
                             <p ref={realTimeDate} id="real-time-date"></p>
                             <div className="flex gap-4">
-                                <span className="hover:text-white cursor-pointer inline-block transition-colors">YT</span>
-                                <span className="hover:text-white cursor-pointer inline-block transition-colors">GH</span>
+                                <span className="hover:text-white cursor-pointer inline-block transition-colors">
+                                    <a href="https://www.youtube.com/@Fosorix" target='_blank'>YT</a>
+                                </span>
+                                <span className="hover:text-white cursor-pointer inline-block transition-colors">
+                                    <a href="https://github.com/mirajg" target='_blank'>GH</a>
+                                </span>
                             </div>
                         </div>
                     </div>
