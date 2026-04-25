@@ -55,7 +55,6 @@ const Contact = () => {
             scrollTrigger: {
                 trigger: sectionContainer.current,
                 start: 'top 75%',
-                end: '+=500',
             }
         });
 
@@ -72,13 +71,13 @@ const Contact = () => {
                 transformOrigin: "top center",
                 duration: 1.8,
                 ease: "power4.out",
-                delay: 0.2            // Gives the user a split second to focus
+                delay: 0.2,
             });
 
     }, { scope: sectionContainer });
 
     return (
-        <section ref={sectionContainer} className="relative w-full h-fit flex justify-center bg-[#050816] py-20">
+        <section id="contact" ref={sectionContainer} className="relative w-full h-fit flex justify-center bg-[#050816] py-20">
             <div className="absolute top-0 left-0 w-full overflow-hidden transform rotate-180">
                 <svg
                     viewBox="0 0 1440 320"

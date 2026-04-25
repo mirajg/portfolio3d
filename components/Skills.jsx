@@ -54,7 +54,7 @@ const Skills = () => {
     return (
         <>
             <section ref={container} id="skills" className="skills-section bg-[#1d1836] flex transition-all duration-500 ease-in-out overflow-hidden">
-                <div className='skills-container p-4 max-w-7xl'>
+                <div id="about" className='skills-container p-4 max-w-7xl'>
 
                     <div className="flex flex-col gap-4">
 
