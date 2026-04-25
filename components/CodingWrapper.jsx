@@ -54,7 +54,7 @@ const CodingWrapper = () => {
 
     return (
         <div ref={container} className="overflow-hidden relative">
-            <div className="absolute top-0 left-0 w-full z-[20] transform rotate-180">
+            <div className="absolute top-0 left-0 w-full z-[2] transform rotate-180">
                 <svg
                     viewBox="0 0 1440 320"
                     preserveAspectRatio="none"
