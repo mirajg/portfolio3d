@@ -5,6 +5,17 @@ import { Analytics } from '@vercel/analytics/next';
 export const metadata = {
   title: "Miraj Gautam - 3D Portfolio",
   description: "A 3D portfolio showcasting my skills and projects in web development, design, and 3D modeling.",
+  author: "Miraj Gautam",
+  keywords: [
+    "Miraj Gautam",
+    "3D portfolio",
+    "web development",
+    "React developer",
+    "Next.js portfolio",
+    "3D design",
+    "frontend developer",
+    "Animated Website"
+  ],
 };
 
 export default function RootLayout({ children }) {
