@@ -1,6 +1,7 @@
 
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
   title: "Miraj Gautam - 3D Portfolio",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
