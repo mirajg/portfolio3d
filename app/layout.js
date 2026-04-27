@@ -1,5 +1,6 @@
 
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: "Miraj Gautam - 3D Portfolio",
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       className={`h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         {children}
+        <Analytics />
       </body>
     </html>
   );
