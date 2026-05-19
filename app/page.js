@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import CodingWrapper from '@/components/CodingWrapper'
 import Skills from '@/components/Skills'
 import CodingStory from '@/components/CodingStory'
 import Projects from '@/components/Projects'
@@ -21,7 +20,6 @@ const page = () => {
           <Header />
           <main style={{ minHeight: '100dvh', overflowY: 'auto', }}>
             <Hero />
-            <CodingWrapper />
             <Skills />
             <CodingStory />
             <Projects />

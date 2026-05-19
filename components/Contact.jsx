@@ -3,10 +3,6 @@
 
 import React, { useState } from 'react';
 import { messageSubmit } from '../actions/messageSubmit.jsx';
-import { Canvas } from '@react-three/fiber'
-import { Suspense } from 'react';
-import Loading from './Loading';
-import Globe from './Globe.jsx';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -145,20 +141,15 @@ const Contact = () => {
                         </form>
                         <hr className="singleLine" ref={singleLine} />
                     </div>
-                    <div className='md:block hidden'>
-                        <Canvas gl={{ powerPreference: "high-performance", antialias: false }} id='canvas' style={{
-                            width: "100%",
-                            height: "100%",
-                            position: "relative",
-                            zIndex: 99,
-                            // background: "blue",
-                            transition: "all 0.4s linear",
-                            pointerEvents: "none",
-                        }}>
-                            <Suspense fallback={<Loading />}>
-                                <Globe />
-                            </Suspense>
-                        </Canvas>
+                    <div className="hidden lg:flex flex-col justify-start items-start w-[320px] bg-[#0f0c27] rounded-2xl p-8 text-white">
+                        <h2 className="text-2xl font-semibold mb-4">Need help or want to collaborate?</h2>
+                        <p className="text-sm leading-7 text-[#c7c3e3]">
+                            Share a few details about your project and I’ll get back to you
+                            with ideas, timelines, and the best way to move forward.
+                        </p>
+                        <p className="mt-6 text-xs uppercase tracking-[0.3em] text-[#7c78a4]">
+                            Available for freelance, remote, and contract work.
+                        </p>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,6 @@
 
 import React, { useRef, useState, Suspense } from 'react'
 import { useEffect } from 'react'
-import Bee from './Bee'
 import { Canvas } from '@react-three/fiber'
 import { Environment } from '@react-three/drei'
 import gsap from 'gsap'
@@ -95,20 +94,6 @@ const PhoneNav = ({ setIsOpen }) => {
         <>
             <div ref={hideRemove} className="hide-remove w-full h-screen bg-black absolute top-0 -left-[100vw] z-99 "></div>
             <div ref={container} className="relative container h-screen hidden nav-container z-99">
-                <Canvas gl={{ powerPreference: "high-performance", antialias: false }} id='canvas' style={{
-                    width: "100%",
-                    height: "100vh",
-                    position: "fixed",
-                    top: "0px",
-                    left: "0%",
-                    zIndex: 99,
-                    transition: "all 0.4s linear",
-                    pointerEvents: "none",
-                }} className='sm:block hidden'>
-                    <Suspense fallback={<Loading />}>
-                        <Bee />
-                    </Suspense>
-                </Canvas>
 
                 <header className='fixed left-0 flex flex-col items-center justify-center bg-[#050816] h-screen w-full overflow-hidden'>
 
