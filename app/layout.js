@@ -4,8 +4,8 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
-  title: "Miraj Gautam - 3D Portfolio",
-  description: "A 3D portfolio showcasting my skills and projects in web development, design, and 3D modeling.",
+  title: "Miraj Gautam - Portfolio",
+  description: "A portfolio showcasting my skills and projects in web development, design and Animation.",
   author: "Miraj Gautam",
   keywords: [
     "Miraj Gautam",
