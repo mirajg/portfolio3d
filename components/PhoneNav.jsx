@@ -126,7 +126,7 @@ const PhoneNav = ({ setIsOpen }) => {
                             <p ref={realTimeDate} id="real-time-date"></p>
                             <div className="flex gap-4">
                                 <span className="hover:text-white cursor-pointer inline-block transition-colors">
-                                    <a href="https://www.youtube.com/@AxionVeilX" target='_blank'>YT</a>
+                                    <a href="https://www.youtube.com/@PragatiPC" target='_blank'>YT</a>
                                 </span>
                                 <span className="hover:text-white cursor-pointer inline-block transition-colors">
                                     <a href="https://github.com/mirajg" target='_blank'>GH</a>
