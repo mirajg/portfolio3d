@@ -24,7 +24,7 @@ export const metadata = {
     siteName: 'Miraj Gautam Portfolio',
     images: [
       {
-        url: 'https://mirajgautam.com.np/favicon.ico', // Full absolute URL!
+        url: '/images/ogImg.png',
         width: 1200,
         height: 630,
         alt: 'Miraj Gautam Portfolio Preview',
