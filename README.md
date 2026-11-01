@@ -5,7 +5,6 @@ A modern, responsive portfolio website built with cutting-edge web technologies 
 ## Tech Stack
 
 - **Next.js**: React framework for server-side rendering and static site generation
-- **Three.js**: JavaScript 3D library for creating and displaying animated 3D computer graphics
 - **GSAP**: High-performance JavaScript animation library for smooth, professional animations
 - **React**: Component-based UI library
 - **CSS/PostCSS**: Styling with modern CSS features
