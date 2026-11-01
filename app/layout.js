@@ -4,8 +4,9 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
+  metadataBase: new URL('https://www.mirajgautam.com.np'), // Essential for Next.js OG images
   title: "Miraj Gautam - Portfolio",
-  description: "A portfolio showcasting my skills and projects in web development, design and Animation.",
+  description: "A portfolio showcasing my skills and projects in web development, design and Animation.",
   author: "Miraj Gautam",
   keywords: [
     "Miraj Gautam",
@@ -24,9 +25,9 @@ export const metadata = {
     siteName: 'Miraj Gautam Portfolio',
     images: [
       {
-        url: 'https://www.mirajgautam.com.np/images/ogImg.png',
-        width: 1853,
-        height: 718,
+        url: '/images/ogImg.png', // Can be relative now because metadataBase handles the domain!
+        width: 1200, // Recommended standard size for social cards
+        height: 630,
         alt: 'Miraj Gautam Portfolio Preview',
       },
     ],
@@ -37,15 +38,13 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Miraj Gautam - Portfolio',
     description: 'A portfolio showcasing my skills and projects in web development, design and Animation.',
-    images: ['https://www.mirajgautam.com.np/images/ogImg.png'],
+    images: ['/images/ogImg.png'],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`h-full antialiased`}>
+    <html lang="en" className={`h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
