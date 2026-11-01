@@ -27,7 +27,7 @@ export const metadata = {
       {
         url: '/images/ogImg.png', // Can be relative now because metadataBase handles the domain!
         width: 1200, // Recommended standard size for social cards
-        height: 630,
+        height: 718,
         alt: 'Miraj Gautam Portfolio Preview',
       },
     ],
