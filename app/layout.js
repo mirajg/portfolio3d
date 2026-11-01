@@ -20,11 +20,11 @@ export const metadata = {
   openGraph: {
     title: "Miraj Gautam - Portfolio",
     description: "A portfolio showcasing my skills and projects in web development, design and Animation.",
-    url: 'https://mirajgautam.com.np',
+    url: 'https://www.mirajgautam.com.np',
     siteName: 'Miraj Gautam Portfolio',
     images: [
       {
-        url: 'https://mirajgautam.com.np/images/ogImg.png',
+        url: 'https://www.mirajgautam.com.np/images/ogImg.png',
         width: 1853,
         height: 718,
         alt: 'Miraj Gautam Portfolio Preview',
@@ -37,7 +37,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Miraj Gautam - Portfolio',
     description: 'A portfolio showcasing my skills and projects in web development, design and Animation.',
-    images: ['https://mirajgautam.com.np/images/ogImg.png'],
+    images: ['https://www.mirajgautam.com.np/images/ogImg.png'],
   },
 };
 
