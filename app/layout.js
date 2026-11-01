@@ -17,6 +17,22 @@ export const metadata = {
     "frontend developer",
     "Animated Website"
   ],
+  openGraph: {
+    title: "Miraj Gautam - Portfolio",
+    description: "A portfolio showcasing my skills and projects in web development, design and Animation.",
+    url: 'https://mirajgautam.com.np', // Your actual live website domain
+    siteName: 'Miraj Gautam Portfolio',
+    images: [
+      {
+        url: 'https://mirajgautam.com.np/favicon.ico', // Full absolute URL!
+        width: 1200,
+        height: 630,
+        alt: 'Miraj Gautam Portfolio Preview',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }) {
