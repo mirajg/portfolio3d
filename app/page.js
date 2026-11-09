@@ -8,6 +8,7 @@ import CodingStory from '@/components/CodingStory'
 import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
 import BootingLoader from '@/components/BootingLoader'
+import Footer from '@/components/Footer'
 
 const page = () => {
   const [loading, setLoading] = useState(false);
@@ -24,6 +25,7 @@ const page = () => {
             <CodingStory />
             <Projects />
             <Contact />
+            <Footer />
           </main>
         </>
       }
