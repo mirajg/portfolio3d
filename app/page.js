@@ -11,7 +11,8 @@ import BootingLoader from '@/components/BootingLoader'
 import Footer from '@/components/Footer'
 
 const page = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
 
   return (
     <div>
