@@ -80,11 +80,13 @@ const Projects = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
                         {[
-                            { title: "Stock Management", description: "Optimizes retail operations by monitoring sales turnover.", link: "https://github.com/mirajg/stockManagement", imgLink: "/images/stock.avif" },
-                            { title: "Real Time Video Call", description: "A web application for video calling with real-time communication.", link: "https://github.com/mirajg/webrtc", imgLink: "/images/videoCall.avif" },
                             { title: "Global Tic-Tac-Toe", description: "A simple tic-tac-toe game with online multiplayer functionality.", link: "https://github.com/mirajg/TicTacToeOnlineUser", imgLink: "/images/ticTacToe.avif" },
+                            { title: "Image Enhancer", description: "A web app for enhancing image quality and removing backgrounds.", link: "https://github.com/mirajg/image-enhancer", imgLink: "/images/imageEnhancer.png" },
+                            { title: "AeroIsland 3D", description: "An immersive 3D portfolio experience with an interactive island, animated airplane, and responsive controls.", link: "https://github.com/mirajg/AeroIsland_3D", imgLink: "/images/aeroIsland.png" },
+                            { title: "3D T-Shirt Customizer", description: "An interactive 3D T-shirt customizer with real-time color, logo, and artwork customization.", link: "https://github.com/mirajg/customizeTShirt", imgLink: "/images/customizeTShirt.png" },
+                            { title: "Skills Barter", description: "A full-stack platform for users to exchange skills, connect with others, and learn through skill-based collaboration.", link: "https://github.com/mirajg/skillsBarter", imgLink: "/images/skillsBarter.png" },
+                            { title: "Real Time Video Call", description: "A web application for video calling with real-time communication.", link: "https://github.com/mirajg/webrtc", imgLink: "/images/videoCall.avif" },
                             { title: "Web Chat Application", description: "A real-time chat application with user registration and authentication.", link: "https://github.com/mirajg/onlineChatWithRegistration", imgLink: "/images/chat.avif" },
-                            { title: "Offline Game Hub", description: "A collection of offline web games built with HTML, CSS, and JavaScript.", link: "https://github.com/mirajg/games", imgLink: "/images/games.avif" },
                             { title: "More Projects", description: "Explore more of my work on GitHub.", link: "https://github.com/mirajg", imgLink: "/images/githubSVG.svg" },
 
                         ].map((data, index) => (
