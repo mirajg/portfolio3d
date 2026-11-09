@@ -11,7 +11,7 @@ import Loading from './Loading'
 
 const NAV_ITEMS = [
     { label: 'ABOUT', id: '#about' },
-    { label: 'WORK', id: '#work' },
+    { label: 'PROJECT', id: '#project' },
     { label: 'CONTACT', id: '#contact' },
 ]
 
