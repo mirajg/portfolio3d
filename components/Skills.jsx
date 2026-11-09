@@ -111,9 +111,10 @@ const Skills = () => {
                                 <div className="relative z-10 flex flex-col items-center">
                                     <div className="mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                                         <img
+                                        draggable={false}
                                             src={service.img}
                                             alt={service.title}
-                                            className="w-24 h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                                            className="w-24 h-24 object-contain  drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
                                         />
                                     </div>
 

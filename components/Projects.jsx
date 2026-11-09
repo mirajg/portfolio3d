@@ -94,7 +94,7 @@ const Projects = () => {
 
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 " />
                                 <div className="relative z-10 flex flex-col items-center">
-                                    <img src={data.imgLink} alt={data.title} className="w-20 h-20 mb-4 rounded-full object-cover" />
+                                    <img draggable={false} src={data.imgLink} alt={data.title} className="w-20 h-20 mb-4 rounded-full object-cover" />
                                     <h3 className="text-center font-bold text-white">
                                         {data.title}
                                     </h3>

@@ -10,7 +10,7 @@ import Contact from '@/components/Contact'
 import BootingLoader from '@/components/BootingLoader'
 
 const page = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   return (
     <div>
